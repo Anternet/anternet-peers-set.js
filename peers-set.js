@@ -70,6 +70,12 @@ class PeersSet extends Map {
     return super.delete(value.key);
   }
 
+  get(value) {
+    if (!(value instanceof Peer)) throw new Error('Expect value to be instance of Peer');
+
+    return super.get(value.key);
+  }
+
   has(value) {
     if (!(value instanceof Peer)) throw new Error('Expect value to be instance of Peer');
 

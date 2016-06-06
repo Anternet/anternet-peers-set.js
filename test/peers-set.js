@@ -171,6 +171,15 @@ describe('PeersSet', () => {
       });
     });
 
+    describe('.get()', () => {
+      it('should return the same peer', () => {
+        const peer = new Peer(12345, '127.0.0.1');
+        const peersSet = new PeersSet([peer]);
+
+        assert.strictEqual(peersSet.get(peer), peer);
+      });
+    });
+
     describe('.toBuffer()', () => {
       it('should create from IPv4', () => {
         const peer = new Peer(15921, '83.54.192.20');
